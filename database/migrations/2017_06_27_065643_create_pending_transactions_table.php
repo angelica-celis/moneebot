@@ -18,7 +18,11 @@ class CreatePendingTransactionsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->string('username');
+            $table->string('username')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('telegram_id')->nullable();
+            $table->string('coin')->nullable();
+
             $table->double('value');
             $table->string('tx');
         });

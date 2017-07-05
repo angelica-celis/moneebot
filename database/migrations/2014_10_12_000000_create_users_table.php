@@ -20,8 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('username')->nullable();
             $table->string('phone')->nullable();
             $table->string('eth_account')->nullable();
-            $table->string('eth_password')->nullable();
-            $table->rememberToken();
+            $table->text('eth_password')->nullable();
+            $table->integer('gas_price')->nullable();
+            $table->string('lang')->nullable();
             $table->timestamps();
         });
     }
