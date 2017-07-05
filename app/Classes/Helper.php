@@ -23,6 +23,6 @@ class Helper
      */
     public static function isFloat($num)
     {
-        return is_float($num) || is_numeric($num) && ((float)$num != (int)$num);
+        return is_numeric($num) && ((float)$num != (int)$num);
     }
 }
