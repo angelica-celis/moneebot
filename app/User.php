@@ -343,7 +343,7 @@ class User extends Authenticatable
     public function changeEthPassword($newPassword)
     {
         $newPassword = str_replace(PHP_EOL, '', $newPassword);
-        $newPassword = escapeshellarg($newPassword);
+        $newPassword = escapeshellcmd($newPassword);
 
         $process = proc_open('geth account update ' . $this->eth_account, [
             0 => ["pipe", "r"],
