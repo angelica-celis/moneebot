@@ -344,7 +344,7 @@ class User extends Authenticatable
     {
         // fix for escapeshellcmd and utf-8
         setlocale(LC_CTYPE, "UTF8", "en_US.UTF-8");
-        
+
         $newPassword = str_replace(PHP_EOL, '', $newPassword);
         $newPassword = escapeshellcmd($newPassword);
 

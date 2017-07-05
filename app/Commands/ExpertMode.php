@@ -78,7 +78,14 @@ class ExpertMode extends Command
 
                 case 'step3' : {
 
-                    $state['gas']['price'] = (int)$text;
+                    $price = (int)$text;
+
+                    if ($price < 1 || $price > 100) {
+                        $this->user->sendMessage('Price should be 0 < x < 101');
+                        throw new StopBotException();
+                    }
+
+                    $state['gas']['price'] = $price;
 
                     list($rec, $recipient) = $this->updateParser->getSendRecipient($state['send_text']);
                     $value = $this->updateParser->getSendValue($state['send_text']);
