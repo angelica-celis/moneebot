@@ -81,7 +81,7 @@ class ExpertMode extends Command
                     $price = (int)$text;
 
                     if ($price < 1 || $price > 100) {
-                        $this->user->sendMessage('Price should be 0 < x < 101');
+                        $this->user->sendMessage('Price should be 0 &lt; x &lt; 101');
                         throw new StopBotException();
                     }
 
